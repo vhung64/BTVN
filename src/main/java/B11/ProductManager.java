@@ -20,12 +20,14 @@ public class ProductManager {
         Map<String, Integer> hashMap = new HashMap<>();
         for(Product pd : list){
             String[] category = pd.getCategory();
-            String str = Arrays.toString(category);
-            if(hashMap.containsKey(str)){
-                hashMap.put(str, hashMap.get(str) + 1);
-            }
-            else{
-                hashMap.put(str, 1);
+//            String str = Arrays.toString(category);
+            for (String str : category){
+                if(hashMap.containsKey(str)){
+                    hashMap.put(str, hashMap.get(str) + 1);
+                }
+                else{
+                    hashMap.put(str, 1);
+                }
             }
         }
         return hashMap;
